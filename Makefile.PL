@@ -8,6 +8,7 @@ WriteMakefile(
     AUTHOR              => q{Pavel Shaydo <zwon@trinitum.org>},
     VERSION_FROM        => 'lib/ZWON/Module/Starter.pm',
     ABSTRACT_FROM       => 'lib/ZWON/Module/Starter.pm',
+    EXE_FILES           => ['bin/create-module.pl'],
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
       ? ('LICENSE'=> 'perl')
       : ()),
