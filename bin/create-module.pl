@@ -38,10 +38,10 @@ Log::Log4perl->easy_init($DEBUG) unless $quiet;
 get_logger->info("Creating $distr using author $author <$email>");
 
 my $starter = ZWON::Module::Starter->new(
-    author    => $author,
-    email     => $email,
-    dist_name => $distr,
-    github    => $github
+    author         => $author,
+    email          => $email,
+    dist_name      => $distr,
+    github_account => $github
 );
 $starter->process_templates;
 
