@@ -1,0 +1,52 @@
+package [% st.dist_name %];
+use strict;
+use warnings;
+our $VERSION = "0.01";
+$VERSION = eval $VERSION;
+
+=head1 NAME
+
+[% st.dist_name %] - Perl extension ...
+
+=head1 VERSION
+
+0.01
+
+=head1 SYNOPSIS
+
+    use [% st.dist_name %];
+
+=head1 DESCRIPTION
+
+=head1 METHODS
+
+=cut
+
+1;
+
+__END__
+
+=head1 SEE ALSO
+
+=head1 BUGS
+
+[% IF st.github_account %]
+Please report any bugs or feature requests via GitHub bug tracker at
+L<http://github.com/[% st.github_account %]/perl-[% st.dist_dir_name %]/issues>.
+
+[% END %]
+=head1 AUTHOR
+
+[% st.author %] C<< <[% st.email_safe %]> >>
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright (C) [% st.year %] [% st.author %]
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
+
+See http://dev.perl.org/licenses/ for more information.
+
+=cut

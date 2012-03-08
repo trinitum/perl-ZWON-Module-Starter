@@ -1,0 +1,3 @@
+0.01 [% st.date %] [% st.author %] <[% st.email %]>
+    * First version, released on an unsuspecting world.
+
