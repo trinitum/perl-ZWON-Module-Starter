@@ -6,4 +6,4 @@ BEGIN {
     use_ok( '[% st.dist_name %]' ) || print "Bail out!\n";
 }
 
-diag( "Testing ZWON::Module::Starter $ZWON::Module::Starter::VERSION, Perl $], $^X" );
+diag( "Testing [% st.dist_name %] $[% st.dist_name %]::VERSION, Perl $], $^X" );
