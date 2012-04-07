@@ -30,7 +30,7 @@ Use L<new-module.pl>
 has author     => ( is => 'ro', required   => 1 );
 has email      => ( is => 'ro', required   => 1 );
 has email_safe => ( is => 'ro', lazy_build => 1 );
-has github => ( is => 'ro' );
+has github_account  => ( is => 'ro' );
 
 sub _build_email_safe {
     my $email = shift->email;

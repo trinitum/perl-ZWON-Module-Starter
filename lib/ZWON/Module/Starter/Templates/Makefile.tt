@@ -15,4 +15,17 @@ WriteMakefile(
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => '[% st.dist_dir_name %]-*' },
+    META_MERGE => {
+        no_index => {
+            file => 'README.pod'
+        },
+        resources => {
+[% IF st.github_account %]
+            homepage   => 'https://github.com/[% st.github_account %]/perl-[% st.dist_dir_name %]',
+            bugtracker => 'https://github.com/[% st.github_account %]/perl-[% st.dist_dir_name %]/issues',
+            repository => 'git://github.com/[% st.github_account %]/perl-[% st.dist_dir_name %]',
+[% END %]
+            license    => 'http://dev.perl.org/licenses/',
+        },
+    },
 );
