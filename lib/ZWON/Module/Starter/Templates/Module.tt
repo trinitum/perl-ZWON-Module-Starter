@@ -26,15 +26,13 @@ $VERSION = eval $VERSION;
 
 __END__
 
-=head1 SEE ALSO
-
+[% IF st.github_account -%]
 =head1 BUGS
 
-[% IF st.github_account %]
 Please report any bugs or feature requests via GitHub bug tracker at
 L<http://github.com/[% st.github_account %]/perl-[% st.dist_dir_name %]/issues>.
 
-[% END %]
+[% END -%]
 =head1 AUTHOR
 
 [% st.author %] C<< <[% st.email_safe %]> >>
