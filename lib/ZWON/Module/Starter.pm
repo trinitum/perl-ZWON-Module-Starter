@@ -65,12 +65,20 @@ sub _build_file_maps {
         Makefile       => 'Makefile.PL',
         README         => 'README.pod',
         t_00_load      => 't/00-load.t',
-        t_pod_coverage => 't/pod-coverage.t',
-        t_pod          => 't/pod.t',
+        t_pod          => 'xt/pod.t',
+        t_pod_coverage => 'xt/pod-coverage.t',
+        t_pod_spell    => 'xt/pod-spell.t',
+        t_manifest     => 'xt/manifest.t',
     );
     $map{Module} = file( 'lib', $self->dist_path );
     return \%map;
 }
+
+=head2 $self->process_templates
+
+Generate module skeleton from templates
+
+=cut
 
 sub process_templates {
     my $self = shift;
