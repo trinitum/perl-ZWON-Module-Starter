@@ -11,7 +11,12 @@ WriteMakefile(
     LICENSE             => 'perl',
     PL_FILES            => {},
     PREREQ_PM => {
+    },
+    BUILD_REQUIRES => {
         'Test::More' => 0.94,
+    },
+    CONFIGURE_REQUIRES => {
+        'ExtUtils::MakeMaker' => 6.3002,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => '[% st.dist_dir_name %]-*' },
