@@ -10,7 +10,7 @@ $VERSION = eval $VERSION;
 
 =head1 VERSION
 
-0.01
+This document describes [% st.dist_name %] version 0.01
 
 =head1 SYNOPSIS
 
