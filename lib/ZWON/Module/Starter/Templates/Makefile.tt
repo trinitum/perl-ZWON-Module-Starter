@@ -5,10 +5,14 @@ use ExtUtils::MakeMaker 6.64;
 
 WriteMakefile(
     NAME                => '[% st.dist_name %]',
+[% IF st.copyright -%]
+    AUTHOR              => q{[% st.copyright %]},
+[% ELSE -%]
     AUTHOR              => q{[% st.author %] <[% st.email %]>},
+    LICENSE             => 'perl',
+[% END -%]
     VERSION_FROM        => 'lib/[% st.dist_path %]',
     ABSTRACT_FROM       => 'lib/[% st.dist_path %]',
-    LICENSE             => 'perl',
     PL_FILES            => {},
     PREREQ_PM => {
     },
@@ -25,12 +29,14 @@ WriteMakefile(
             file => 'README.pod'
         },
         resources => {
-[% IF st.github_account %]
+[% IF st.github_account -%]
             homepage   => 'https://github.com/[% st.github_account %]/perl-[% st.dist_dir_name %]',
             bugtracker => 'https://github.com/[% st.github_account %]/perl-[% st.dist_dir_name %]/issues',
             repository => 'git://github.com/[% st.github_account %]/perl-[% st.dist_dir_name %]',
-[% END %]
+[% END -%]
+[% IF not st.copyright -%]
             license    => 'http://dev.perl.org/licenses/',
+[% END -%]
         },
     },
 );

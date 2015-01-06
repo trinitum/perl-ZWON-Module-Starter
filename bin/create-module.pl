@@ -27,6 +27,7 @@ GetOptions(
     "email=s"        => \$email,
     "distribution=s" => \my $distr,
     "github=s"       => \my $github,
+    "copyright=s"    => \my $copyright,
     help             => \my $help,
     "quiet"          => \my $quiet,
 ) or die $usage;
@@ -41,7 +42,8 @@ my $starter = ZWON::Module::Starter->new(
     author         => $author,
     email          => $email,
     dist_name      => $distr,
-    github_account => $github
+    github_account => $github,
+    copyright      => $copyright,
 );
 $starter->process_templates;
 

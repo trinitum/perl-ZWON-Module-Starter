@@ -11,6 +11,11 @@ To install this module, run the following commands:
     make test
     make install
 
+[% IF st.copyright -%]
+=head1 COPYRIGHT
+
+Copyright (C) [% st.year %] [% st.copyright %]
+[% ELSE -%]
 =head1 LICENSE AND COPYRIGHT
 
 Copyright (C) [% st.year %] [% st.author %]
@@ -20,5 +25,6 @@ under the terms of either: the GNU General Public License as published
 by the Free Software Foundation; or the Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
+[%- END %]
 
 =cut

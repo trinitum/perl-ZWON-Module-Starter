@@ -33,6 +33,11 @@ Please report any bugs or feature requests via GitHub bug tracker at
 L<http://github.com/[% st.github_account %]/perl-[% st.dist_dir_name %]/issues>.
 
 [% END -%]
+[% IF st.copyright -%]
+=head1 COPYRIGHT
+
+Copyright (C) [% st.year %] [% st.copyright %]
+[% ELSE -%]
 =head1 AUTHOR
 
 [% st.author %] C<< <[% st.email_safe %]> >>
@@ -46,5 +51,6 @@ under the terms of either: the GNU General Public License as published
 by the Free Software Foundation; or the Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
+[%- END %]
 
 =cut
