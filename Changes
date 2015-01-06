@@ -1,5 +1,8 @@
 Revision history for ZWON-Module-Starter
 
+0.03 Tue Jan  6 2015 Pavel Shaydo <zwon@cpan.org>
+    - add support for proprietary modules
+
 0.01 Wed Feb 29 2012 Pavel Shaydo <zwon@cpan.org>
-    * First version, released on an unsuspecting world.
+    - First version, released on an unsuspecting world.
 
