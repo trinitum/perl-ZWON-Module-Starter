@@ -4,7 +4,7 @@ use 5.010;
 use Moose;
 use Template;
 use POSIX qw(strftime);
-use Path::Class;
+use Path::Tiny;
 use Log::Log4perl qw(get_logger :nowarn);
 
 =head1 NAME
@@ -43,7 +43,7 @@ has dist_path => ( is => 'ro', lazy_build => 1 );
 
 sub _build_dist_path {
     my $self = shift;
-    return file( split /::/, $self->dist_name . ".pm" );
+    return path( split /::/, $self->dist_name . ".pm" );
 }
 has dist_dir_name => ( is => 'ro', lazy_build => 1 );
 
@@ -71,7 +71,7 @@ sub _build_file_maps {
         t_pod_spell    => 'xt/pod-spell.t',
         t_manifest     => 'xt/manifest.t',
     );
-    $map{Module} = file( 'lib', $self->dist_path );
+    $map{Module} = path( 'lib', $self->dist_path );
     return \%map;
 }
 
@@ -83,20 +83,14 @@ Generate module skeleton from templates
 
 sub process_templates {
     my $self = shift;
-    my $tdir;
-
-    for (@INC) {
-        my $dir = dir( $_, split( /::/, __PACKAGE__ ), 'Templates' );
-        next unless -d $dir;
-        $tdir = $dir;
-    }
-    die "Couldn't find templates in ", join ", ", @INC unless $tdir;
-    get_logger->debug("found templates in $tdir");
+    my $tdir = path(__FILE__)->parent->child('Starter/Templates');
+    die "Couldn't find templates in $tdir" unless $tdir->exists;
+    get_logger->debug("using templates from $tdir");
 
     my $tt = Template->new( INCLUDE_PATH => $tdir, );
     while ( my ( $key, $value ) = each %{ $self->file_maps } ) {
-        my $file  = file($self->dist_dir_name, $value);
-        my $fdir  = $file->dir;
+        my $file  = path($self->dist_dir_name, $value);
+        my $fdir  = $file->parent;
         unless ( -d $fdir ) {
             get_logger->info("Creating $fdir");
             $fdir->mkpath( 0, 0755 );
