@@ -6,7 +6,6 @@ use warnings;
 use ZWON::Module::Starter;
 use Getopt::Long;
 use Log::Log4perl qw(:easy get_logger);
-use Pod::Text;
 
 my $usage = <<EOT;
 create-module.pl [OPTIONS]
@@ -48,8 +47,6 @@ my $starter = ZWON::Module::Starter->new(
 $starter->process_templates;
 
 chdir $starter->dist_dir_name or die $!;
-my $parser = Pod::Text->new;
-$parser->parse_from_file( 'README.pod', 'README' );
 system(qw(git init));
 system(qw(git add .));
 system( $^X, "Makefile.PL" );

@@ -64,7 +64,7 @@ sub _build_file_maps {
         Changes        => 'Changes',
         gitignore      => '.gitignore',
         Makefile       => 'Makefile.PL',
-        README         => 'README.pod',
+        README         => 'README',
         t_00_load      => 't/00-load.t',
         t_pod          => 'xt/pod.t',
         t_pod_coverage => 'xt/pod-coverage.t',

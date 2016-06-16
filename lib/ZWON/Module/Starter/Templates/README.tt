@@ -1,8 +1,8 @@
-=head1 NAME
+NAME
 
 [% st.dist_name %]
 
-=head1 INSTALLATION
+INSTALLATION
 
 To install this module, run the following commands:
 
@@ -12,11 +12,11 @@ To install this module, run the following commands:
     make install
 
 [% IF st.copyright -%]
-=head1 COPYRIGHT
+COPYRIGHT
 
 Copyright (C) [% st.year %] [% st.copyright %]
 [% ELSE -%]
-=head1 LICENSE AND COPYRIGHT
+LICENSE AND COPYRIGHT
 
 Copyright (C) [% st.year %] [% st.author %]
 
@@ -26,5 +26,3 @@ by the Free Software Foundation; or the Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
 [%- END %]
-
-=cut
