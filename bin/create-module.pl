@@ -13,6 +13,7 @@ create-module.pl [OPTIONS]
 --author    author name
 --email     author e-mail
 --github    github account
+--copyright for proprietary modules
 --distribution  distribution name
 EOT
 
